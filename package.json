@@ -1,0 +1,28 @@
+{
+  "name": "balancer-tricks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": "^20"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prestart": "yarn build",
+    "start": "node build/main.js"
+  },
+  "dependencies": {
+    "@fibery/vizydrop-logger": "^3.4.0",
+    "@targetprocess/balancer-core": "^1.5.2",
+    "lodash": "^4.17.21",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.9",
+    "@types/node": "^22.7.4",
+    "@types/pg": "^8.11.10",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2"
+  }
+}

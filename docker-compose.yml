@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres:13.3
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=sa
+    ports:
+      - "5432:5432"
+
+  db-creator:
+    image: fibery/pg-dbmaker-docker:latest
+    environment:
+      PG_HOST: postgres
+      PG_USER: postgres
+      PGPASSWORD: sa
+      DB_LIST: |
+        balancer postgres sa
+    depends_on:
+      - postgres
+
